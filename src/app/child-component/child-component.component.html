@@ -1,0 +1,10 @@
+<div class="form-dropdown">
+    <div class="form-dropdown-el" *ngFor="let element of els" (mouseenter)="onHover(element.id)" (mouseleave)="onLeave(element.id)">
+      <div class="tooltip">Custom Tooltip Text + {{ element.name }}</div> <!-- Tooltip -->
+      <select [name]="element.name">
+        <option value="" disabled selected>{{ hoveredElementLabels[element.id] || element.defaultOption }}</option>
+        <option *ngFor="let option of element.options; let i=index" [value]="element.values[i]">{{ option }}</option>
+      </select>
+    </div>
+  </div>
+  

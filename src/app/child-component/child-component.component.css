@@ -1,0 +1,43 @@
+
+  
+
+  select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23000" width="12" height="12" viewBox="0 0 12 6" xmlns="http://www.w3.org/2000/svg"><path d="M6 5.5l-5-4-1 1 6 5 6-5-1-1z"/></svg>'); /* Change arrow color */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    transition: width 0.3s ease; 
+  }
+
+ /* select:hover {
+   width: 150px; 
+ }*/
+  
+  .tooltip {
+    width:100%;
+    color:black;
+    text-align: left;
+  }
+
+.form-dropdown-el {
+    flex: 1 0 48%;
+    }
+
+.form-dropdown {
+        display: flex;
+        width: 100%;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+.form-dropdown-el select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2em;
+        color: #ccc;
+    }

@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Monaco", sans-serif;
+    margin: 80px 10px;
+    padding: 25px;
+    background-color: white;
+  }
+  
+  .form-column {
+    flex: 1;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2em;
+    color: #ccc;
+  }
+
+  .form-group input::placeholder {
+    color: #ccc;
+  }
+
+  .map-column {
+    flex: 1;
+    /* Add styles for the Google Map element here */
+  }
+  .form-header {
+    color: #ccc;
+    padding: 35px 0px;
+    text-align: center;
+    width: 100%;
+    font-size: 1.3em;
+  }
+  .form-dropdown {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+  }

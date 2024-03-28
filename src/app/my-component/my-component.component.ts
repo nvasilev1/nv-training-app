@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter,Input, OnInit, Output } from '@angular/core';
+import { Elements } from '../model/dropdown-el';
 
 @Component({
   selector: 'app-my-component',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './my-component.component.css'
 })
 export class MyComponentComponent {
+  @Input()
+  els = Elements;
+ 
 
+  ngOnInit() {
+    console.log (this.els);
+  }
 }
