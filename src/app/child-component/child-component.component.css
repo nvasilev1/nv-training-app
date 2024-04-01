@@ -16,10 +16,20 @@
  }*/
   
   .tooltip {
+    display: block;
     width:100%;
     color:black;
     text-align: left;
   }
+
+.tooltip-hidden {
+  visibility: hidden;
+}
+
+.form-dropdown-el select:hover {
+  width: 120%;
+  position: relative;
+}
 
 .form-dropdown-el {
     flex: 1 0 48%;

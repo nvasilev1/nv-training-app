@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener  } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +18,15 @@ export class AppComponent {
   currentWord:string = "";
   tmp:number = 1;
 
+
+  isScrolled:Boolean = false
+  
+  @HostListener('window:scroll', [])
+  onScroll() {
+    this.isScrolled = window.scrollY > 0;
+  }
+    
+  
 
   ngOnInit() {
   

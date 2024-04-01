@@ -1,16 +1,18 @@
 <div class="main">
-  <div class="main-menu">
-    <div class="main-logo"><img src="assets/logo_outline_white.svg" alt="Logo-main Ocenime.bg"></div>
-    <div class="navbar"(click)="toggleMenu()">
+  <div class="main-menu" [ngClass]="{'scrolled' : isScrolled}">
+    <div class="main-logo">
+      <a href="#" ><img src="assets/logo_outline_white.svg" alt="Logo-main Ocenime.bg"></a>
+    </div>
+    <div class="navbar" (click)="toggleMenu()">
       <div class="menu-toggle" >
         <div class="icon" [ngClass]="{'open': isMenuOpen}"></div> <!-- Icon container -->
       </div>
       <div class="menu" [ngClass]="{'open': isMenuOpen}">
-        <div class="hb-menu-item">Реални сделки</div>
-        <div class="hb-menu-item">Национална статистика</div>
-        <div class="hb-menu-item">Поръчай онлайн</div>
-        <div class="hb-menu-item">Правна помощ</div>
-        <div class="hb-menu-item">Блог</div>
+        <div class="hb-menu-item"><a href="https://data.ocenime.bg/landing" target="_blank">Сделки</a> </div>
+        <div class="hb-menu-item"><a href="https://data.ocenime.bg/market-overview" target="_blank">Национална статистика</a></div>
+        <div class="hb-menu-item"><a href="https://ocenime.bg/request-appraisal" target="_blank">Поръчай онлайн</a></div>
+        <div class="hb-menu-item"><a href="https://ocenime.bg/request-legal" target="_blank">Правна помощ</a></div>
+        <div class="hb-menu-item"><a href="https://blog.ocenime.bg/" target="_blank">Блог</a></div>
       </div>
     </div>
   </div>

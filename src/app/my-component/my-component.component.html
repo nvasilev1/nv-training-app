@@ -12,11 +12,44 @@
              <app-child-component></app-child-component>
  
         </div>
-        <button type="submit">Submit</button>
+        <div class="form-group ticks">
+          <div class="exposition">
+            Изложение
+          </div>
+          <div class="direction-checkboxes">
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name="north">
+              <div class="checkbox-container" (click)="toggleCheckbox('north')" [ngClass]="{'checked': northChecked}"></div>
+              <div>Север</div>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name="south" (click)="toggleCheckbox('south')" [checked]="southChecked" id="southCheckbox">
+              <div class="checkbox-container" (click)="toggleCheckbox('south')" [ngClass]="{'checked': southChecked}"></div>
+              <div>Юг</div>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name="west" (click)="toggleCheckbox('west')" [checked]="westChecked" id="westCheckbox">
+              <div class="checkbox-container" (click)="toggleCheckbox('west')" [ngClass]="{'checked': westChecked}"></div>
+              <div>Запад</div>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name="east" (click)="toggleCheckbox('east')" [checked]="eastChecked" id="eastCheckbox">
+              <div class="checkbox-container" (click)="toggleCheckbox('east')" [ngClass]="{'checked': eastChecked}"></div>
+              <div>Изток</div>
+            </div>
+            
+            
+          </div>
+          <div class="direction-checkboxes-text">
+            Възможни са повече от един отговор
+          </div> 
+        </div>
+        <div class="form-group button" (mouseenter)="btnMouseIn()" (mouseleave)="btnMouseOut()" [ngClass]="{'hovered' : buttonHover}">
+          <button type="submit">{{buttonHovertxt}}</button>
+        </div>
       </form>
     </div>
     <div class="map-column">
-      <!-- Google Map element goes here -->
-      <!-- Make sure to include the necessary scripts and styles for Google Maps -->
+      <app-map></app-map>
     </div>
   </div>
