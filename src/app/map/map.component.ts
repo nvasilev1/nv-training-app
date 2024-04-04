@@ -18,19 +18,13 @@ export class MapComponent implements AfterViewInit {
   constructor() {}
 
   ngAfterViewInit() {
-    console.log('1st check');
 
-    console.log('ngAfterViewInit called');
-    if (typeof H === 'undefined') {
-      //console.error('Here Maps API script not loaded');
-      console.log('Here Maps API script not loaded')
-      return;
-    }
+
 
     this.platform = new H.service.Platform({
-      apikey: 'Wjx1Er-326XP7wrSEiuJlxlCdPyHrkH0OeJihNsteYs' // Replace with your Here Maps API key
+      apikey: 'Wjx1Er-326XP7wrSEiuJlxlCdPyHrkH0OeJihNsteYs' 
     });
-    console.log('2nd check')
+
     const defaultLayers = this.platform.createDefaultLayers();
     this.map = new H.Map(
       this.mapElement.nativeElement,
@@ -44,32 +38,42 @@ export class MapComponent implements AfterViewInit {
     const mapEvents = new H.mapevents.MapEvents(this.map);
     const behavior = new H.mapevents.Behavior(mapEvents);
   
-    // Add wheel event listener to handle zooming
+    
     this.map.addEventListener('wheel', (event: any) => {
       try {
-        // Prevent default scroll behavior
+        
         event.preventDefault();
     
         console.log('Scroll event detected.');
     
-        // Calculate zoom delta based on wheel event
         let delta = 0;
-        if (event.wheelDelta) { // For WebKit-based browsers
-          delta = event.wheelDelta / 120;
-        } else if (event.detail) { // For Firefox
-          delta = -event.detail / 3;
+
+        if (event.deltaY) {
+          delta = event.deltaY;
+        } else {
+          if (event.delta) {
+            delta = event.delta;
+          } else {
+            if (event.wheelDelta) {
+              delta = event.wheelDelta / 120;
+            } else {
+              delta = -event.detail / 3;
+            }
+          }
         }
-        console.log(delta);
-        // Get current zoom level
+
+        console.log('Delta:', delta);
+    
+    
+
         let zoom = this.map.getZoom();
-    
-        // Adjust zoom level based on wheel delta
-        zoom += delta > 0 ? -1 : 1; // Reverse the direction for zooming in and out
-    
+
+
+        zoom += delta > 0 ? -1 : 1; 
+
         // Ensure zoom level is within valid range (typically 0 to 20)
-        zoom = Math.max(0, Math.min(20, zoom)); // Adjust the maximum zoom level as needed
-    
-        // Set new zoom level
+        zoom = Math.max(0, Math.min(20, zoom)); 
+ 
         this.map.setZoom(zoom);
       } catch (error) {
         console.error('Error handling scroll event:', error);

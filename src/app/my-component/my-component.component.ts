@@ -8,10 +8,12 @@ import { Elements } from '../model/dropdown-el';
   styleUrl: './my-component.component.css'
 })
 export class MyComponentComponent {
-  
+  address: string = '';
+
   @Input()
   els = Elements;
  
+
 
   northChecked: boolean = false;
   southChecked: boolean = false;
